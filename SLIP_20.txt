@@ -1,0 +1,62 @@
+#############
+Q1.
+//////student_info.xml///////
+
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+  <student id="1">
+    <name>xyz</name>
+    <age>20</age>
+    <major>Computer Science</major>
+    <gpa>3.5</gpa>
+  </student>
+  <student id="2">
+    <name>abcd</name>
+    <age>21</age>
+    <major>English</major>
+    <gpa>3.2</gpa>
+  </student>
+  <student id="3">
+    <name>ukgcv</name>
+    <age>19</age>
+    <major>Mathematics</major>
+    <gpa>3.7</gpa>
+  </student>
+  <student id="4">
+    <name>iouhsdvg</name>
+    <age>22</age>
+    <major>biology</major>
+    <gpa>3.9</gpa>
+  </student>
+  <student id="5">
+    <name>ukhbibvf</name>
+    <age>18</age>
+    <major>History</major>
+    <gpa>3.0</gpa>
+  </student>
+</students>
+
+////////student_info.php////////
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Information</title>
+</head>
+<body>
+  <?php
+  // Load the XML file
+  $xml = simplexml_load_file("students.xml");
+
+  // Loop through the student records and display them
+  foreach ($xml->student as $student) {
+    echo "<h2>Student " . $student['id']. "</h2>";
+    echo "<p>Name: " . $student->['name']. "</p>";
+    echo "<p>Age: " . $student->['age ']. "</p>";
+    echo "<p>Major: " . $student->['major']. "</p>";
+    echo "<p>GPA: " . $student->['gpa']. "</p>";
+    echo "<hr>";
+  }
+  ?>
+</body>
+</html>

@@ -1,0 +1,64 @@
+Q1.###########
+//////accept.php//////////////
+
+<html>
+    <body>
+        <form  method="post">
+            <input type="text" name="font" id="font"/>
+            <input type="text" name="color" id="color"/>
+            <input type="number" name="size" id="size"/>
+            <input type="text" name="bgcolor" id="bgcolor"/>
+            <input type="submit" name="submit" id="submit">button</input>
+        </form>
+    </body>
+</html>
+<?php
+    echo "hello";
+    if(isset($_POST["submit"])){
+        setcookie("font",$_POST["font"],time()+543,"/");
+        setcookie("color",$_POST["color"],time()+543,"/");
+        setcookie("size",$_POST["size"],time()+543,"/");
+        setcookie("bgcolor",$_POST["bgcolor"],time()+543,"/");
+        header("Location:display.php");
+    }
+?>
+
+//////actual.php///////////////
+
+<html>
+    <style>
+        body{
+            background-color: <?php echo $_COOKIE["bgcolor"] ?>;
+        }
+        p{
+            font:<?php echo $_COOKIE["font"] ?>;
+            size:<?php echo $_COOKIE["size"] ?>;
+            color: <?php echo $_COOKIE["color"] ?>;
+        }
+    </style>
+    <body>
+        <p>hello</p>
+    </body>
+</html>
+
+///////display.php///////////
+
+<?php
+    echo "size:".$_COOKIE["size"]."<br>";
+    echo "color:".$_COOKIE["color"]."<br>";
+    echo "font:".$_COOKIE["font"]."<br>";
+    echo "bgcolor:".$_COOKIE["bgcolor"]."<br>";
+?>
+<html>
+    <body>
+        <form method="post">
+            <input type="submit" name="submit" id="submit" ></input>
+        </form>
+    </body>
+</html>
+<?php
+    if(isset($_POST["submit"])){
+        header("Location:accept.php");/// if code is not workring then change to actucal.php
+    }
+?>
+

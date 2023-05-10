@@ -1,0 +1,24 @@
+################
+Q1.
+///////alert.html/////////
+<html>
+<body>
+	<button onclick="myfunction()">click</button>
+	<script type="text/javascript">
+	Function myfunction()
+	{
+		var person= prompt("please enter your name","xyz");
+		if(person!=NULL)
+		{
+			var r=Confirm("hello"+person+"exams are near have u started preparing for it?");
+			if(r==true)
+			{
+				alert("GOOD!!");
+			}
+			else
+				alert("START PREPARING!");
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+#############
+Q1.
+///////movie.xml////////
+
+<?xml version="1.0" encoding="UTF-8"?>
+<movies>
+  <movie>
+    <MovieInfoMovieNo>1</MovieInfoMovieNo>
+    <MovieTitle>The Shawshank Redemption</MovieTitle>
+    <ActorName>Tim Robbins</ActorName>
+    <ReleaseYear>1994</ReleaseYear>
+  </movie>
+  <movie>
+    <MovieInfoMovieNo>2</MovieInfoMovieNo>
+    <MovieTitle>The Godfather</MovieTitle>
+    <ActorName>Marlon Brando</ActorName>
+    <ReleaseYear>1972</ReleaseYear>
+  </movie>
+  <movie>
+    <MovieInfoMovieNo>3</MovieInfoMovieNo>
+    <MovieTitle>The Dark Knight</MovieTitle>
+    <ActorName>Heath Ledger</ActorName>
+    <ReleaseYear>2008</ReleaseYear>
+  </movie>
+</movies>
+
+////////movieXML.php/////////
+
+<?php
+    $data=new DOMDocument();
+
+    $data->load("movie.xml");
+    //get element
+    $root = $data->documentElement;
+
+foreach ($root->childNodes as $movie) {
+    $movieNo = $movie->getElementsByTagName('MovieInfoMovieNo')->item(0)->nodeValue;
+    $movieTitle = $movie->getElementsByTagName('MovieTitle')->item(0)->nodeValue;
+    $actorName = $movie->getElementsByTagName('ActorName')->item(0)->nodeValue;
+    $releaseYear = $movie->getElementsByTagName('ReleaseYear')->item(0)->nodeValue;
+
+    // process movie data as needed
+    echo "Movie $movieNo: $movieTitle ($actorName, $releaseYear)\n";
+}
+?>

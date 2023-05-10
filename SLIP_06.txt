@@ -1,0 +1,34 @@
+########
+Q1.
+///////book.xml///////
+<?xml version="1.0" encoding="UTF-8"?>
+<bookinfo>
+<book>
+	<booknumber>1</bookname>
+	<bookname>java</bookname>
+	<authorname>abcd</authorname>
+	<bookprice>1000</bookprice>
+	<year>2106</year>
+</book>
+<book>
+	<booknumber>2</bookname>
+	<bookname>c</bookname>
+	<authorname>efghi</authorname>
+	<bookprice>2500</bookprice>
+	<year>2020</year>
+</book>
+
+///////book.php///////////
+
+<?php
+	$xml= simplexml_load_file("book.xml");
+	foreach($xml->book as $ban)
+	{
+		echo"booknumber=$ban->booknumber"-"<br>";
+		echo"bookname=$ban->bookname"-"<br>";
+		echo"bookprice=$ban->bookprice"-"<br>";
+		echo"year=$ban->year"-"<br>";
+	}
+?>
+
+

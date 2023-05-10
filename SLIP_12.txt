@@ -1,0 +1,57 @@
+##########
+Q1
+////////read.html/////////
+
+<!DOCTYPE html>
+<html>
+   <body>
+       <script type="text/javascript">
+function run()
+{
+	var ob=false;
+	ob=new XMLHttpRequest();
+	
+	ob.open("GET","read.php?");
+	ob.send();
+	
+	ob.onreadystatechange= function()
+	{
+		if(ob.readyState==4 && ob.status==200)
+		{
+			document.getElementById("i").innerHTML=ob.responseText;
+		}
+	}
+</script>
+<center>
+<h3>Display the Contents of a contact.dat file </h3>
+<input type="button" value="Print" onclick="run()">
+<span id="i"></span>
+</center>
+       </body>
+</html>
+
+///////read.php/////////
+
+<?php
+	$fp = fopen('contact.dat','r');
+	echo "<table border=1>";
+	echo "<tr><th>Sr.No.</th><th>Name</th><th>Mob.no</th><th>Adress</th>";
+	
+while($row = fscanf($fp,"%s %s %s %s"))
+	{
+		echo "<tr>";
+		foreach($row as $r)
+		{
+			echo "<td>$r</td>";
+		}
+		echo "</tr>";
+        }
+        echo "</table>";
+        fclose($fp);
+?>
+
+///////contact.dat///////
+
+1  Isha  65768798  98765432  Daughter
+2  Megha  65235689  87654329  Mother
+

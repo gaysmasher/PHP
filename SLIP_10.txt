@@ -1,0 +1,24 @@
+##########
+Q1.
+////////before_after.html///////////
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Insert Text Before and After Paragraph Using jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <p id="my-paragraph">This is a paragraph.</p>
+
+  <script>
+    $(document).ready(function() {
+      // Insert text before the paragraph
+      $("#my-paragraph").before("<p>Text inserted before the paragraph.</p>");
+
+      // Insert text after the paragraph
+      $("#my-paragraph").after("<p>Text inserted after the paragraph.</p>");
+    });
+  </script>
+</body>
+</html>

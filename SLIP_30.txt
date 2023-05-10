@@ -1,0 +1,51 @@
+##########
+Q1.
+///////bookcategory.xml//////
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Bookstore>
+ 	<Category>
+ 		<Category_Name>Yoga</Category_Name>
+ 			<Book>
+ 				<Book_Title>The Yoga </Book_Title>
+ 				<Book_Author>vlibv</Book_Author>
+ 				<Book_Price>120</Book_Price>
+ 			</Book>
+ 			<Book>
+ 				<Book_Title>Yogatwo</Book_Title>
+ 				<Book_Author>bdsnb</Book_Author>
+ 				<Book_Price>500</Book_Price>
+ 			</Book>
+ 	</Category>
+ 	<Category>
+ 		<Category_Name>Story</Category_Name>
+ 			<Book>
+ 				<Book_Title>The Alchemist</Book_Title>
+ 				<Book_Author>nbsdnbd</Book_Author>
+ 				<Book_Price>999</Book_Price>
+ 			</Book>
+ 			<Book>
+ 				<Book_Title>booktwo</Book_Title>
+ 				<Book_Author>ihlkb</Book_Author>
+ 				<Book_Price>450</Book_Price>
+ 			</Book>
+ 	</Category>
+ 	<Category>
+ 		<Category_Name>Technical</Category_Name>
+ 			<Book>
+ 				<Book_Title>coding</Book_Title>
+ 				<Book_Author>robert</Book_Author>
+ 				<Book_Price>290</Book_Price>
+ 			</Book>
+ 			<Book>
+ 				<Book_Title>JavaScript</Book_Title>
+ 				<Book_Author>jyukgv</Book_Author>
+ 				<Book_Price>350</Book_Price>
+ 			</Book>
+ 		</Category>
+</Bookstore>
+
+
+
+
